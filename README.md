@@ -1,49 +1,39 @@
-# Portfolio Project 1 - SQL and PowerBI - AdventureWorks
+# Portfolio Project 1: SQL and Power BI, AdventureWorks
 
-Welcome to my one of my portfolio projects! In this data cleaning, analysis and visualisation project, I clean the AdventureWorks dataset with SQL, then visualise it as an interactive 3-page dashboard with PowerBI and also export a static version of the dashboard as a PDF.
+I took the AdventureWorks dataset, a sample sales database from a fictional bike manufacturer covering products, customers, and transactions, and turned it into a full end to end analytics project. Cleaned the data with SQL, built a three page interactive dashboard in Power BI, and exported a static PDF version.
 
+## Build Process
 
+I wrote SQL queries to clean four data tables, keeping only the columns needed for the dashboard and exporting each one as a CSV. From there I imported the four CSVs plus an Excel worksheet into Power BI and linked them together in the Model tab.
 
-**Project Guide**
+![Data model](https://user-images.githubusercontent.com/122973220/213426036-5aa569b0-9f8d-4b82-bbb2-2d242e2c7e09.jpg)
 
-The 4 CSV data tables are the output of the SQL queries, where I clean the tables by sorting and exporting only those columns which are needed for visualisation in PowerBI. 
+Next I used Power Query to rename columns, fix data types, and shape everything into a format ready for visualization. Then I built the three page dashboard and exported a PDF copy.
 
-Once the cleaned data tables have been exported as CSVs, I import the 4 CSVs and the Excel worksheet into PowerBI, where I link the tables together in the "Model" side tab:
+## Page 1: Sales Overview
 
-![portfolio_1-image-data_model](https://user-images.githubusercontent.com/122973220/213426036-5aa569b0-9f8d-4b82-bbb2-2d242e2c7e09.jpg)
+![Sales overview](https://user-images.githubusercontent.com/122973220/213424939-2e4614c7-28f2-4f25-9691-e53f7aa9f368.jpg)
 
-I then further process the data in Power Query ("Transform data" on the Home tab), renaming columns, changing columns' data type etc. and bring the columns into a format suitable for visualisation.
+## Page 2: Sales by Customer
 
-Finally, I visualise the data as an interactive 3-page dashboard in PowerBI. I also export a static version of the dashboard as a PDF.
+![Sales by customer](https://user-images.githubusercontent.com/122973220/213426418-36348415-aa68-42e7-90a2-81b0306cd30f.jpg)
 
-**Page 1 - AdventureWorks Sales Overview**
+## Page 3: Sales by Product
 
-![portfolio_1-image-adventure_works_1](https://user-images.githubusercontent.com/122973220/213424939-2e4614c7-28f2-4f25-9691-e53f7aa9f368.jpg)
+![Sales by product](https://user-images.githubusercontent.com/122973220/213426517-39db89b9-88e1-4241-9844-bd65cfadb686.jpg)
 
-**Page 2 - Sales by Customer**
+## Project Files
 
-![portfolio_1-image-adventure_works_2](https://user-images.githubusercontent.com/122973220/213426418-36348415-aa68-42e7-90a2-81b0306cd30f.jpg)
+Three project files here, one SQL script, one Power BI file, one PDF, plus five data files, four CSVs and one Excel worksheet.
 
-**Page 3 - Sales by Product**
+The full AdventureWorks Data Warehouse file is 99 MB, over GitHub's 25 MB limit, so it is not included in this repo. Download it directly from Microsoft:
 
-![portfolio_1-image-adventure_works_3](https://user-images.githubusercontent.com/122973220/213426517-39db89b9-88e1-4241-9844-bd65cfadb686.jpg)
+[AdventureWorksDW2019.bak](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2019.bak)
 
+The original Microsoft Learn link is also in my SQL script file. This file comes in backup format, so I restored it through SQL Server Management Studio to unlock the full dataset, then ran a script from TechTalkCorner to update several date columns before starting my own analysis:
 
+[Update_AdventureWorksDW_Data.sql](https://github.com/techtalkcorner/SampleDemoFiles/blob/master/Database/AdventureWorks/Update_AdventureWorksDW_Data.sql)
 
-**Project Files**
+## What Is Next
 
-There are 3 project files (1 SQL, 1 PowerBI and 1 PDF) and 5 data table files (4 CSVs and 1 Excel Worksheet) in this repository.
-
-I am unable to upload the full "AdventureWorks Data Warehouse version 2019" file (99 MB) here on my GitHub due to file size limit of 25 MB. Here is the download link to the original dataset on Microsoft's GitHub: https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2019.bak (Original Microsoft Learn link is available in my SQL script file.)
-
-This file is in backup file format (.bak) so I went into Microsoft SQL Server Management Studio and restored the backup file, allowing access to the full dataset. I then ran this SQL script by TechTalkCorner to update some columns like dates in the dataset: https://github.com/techtalkcorner/SampleDemoFiles/blob/master/Database/AdventureWorks/Update_AdventureWorksDW_Data.sql
-
-With that, I began my SQL querying and analysis.
-
-
-
-**Future Project Aim**
-
-In addition to SQL and R, I have now improving this project with Python. I aim to set up and automate this process as a system, where data is pulled from a database, cleaned and organised into a format suitable for visualisation, visualised in a dashboard, the dashboard is exported as a PDF and the PDF is emailed to concerned stakeholders automatically.
-
-The entire process should be autonomous and require almost zero human attention, with the exception of regular checks to verify the proper functioning of the process and the accuracy of the results.
+I am rebuilding this pipeline with Python in addition to SQL and R, with the goal of full automation, pulling data from a database, cleaning it, building the dashboard, exporting it as a PDF, and emailing it to stakeholders with no manual steps beyond periodic checks.
