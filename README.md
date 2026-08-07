@@ -1,4 +1,4 @@
-# Portfolio Project 1: SQL and Power BI, AdventureWorks
+# SQL and Power BI, AdventureWorks
 
 I took the AdventureWorks dataset, a sample sales database from a fictional bike manufacturer covering products, customers, and transactions, and turned it into a full end to end analytics project. Cleaned the data with SQL, built a three page interactive dashboard in Power BI, and exported a static PDF version.
 
